@@ -1,2 +1,1 @@
-import './js/unsplash-api';
-
+import './js/gallery';
