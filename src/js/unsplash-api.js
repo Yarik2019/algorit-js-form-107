@@ -1,12 +1,11 @@
 import axios from 'axios';
+axios.defaults.baseURL = 'https://api.unsplash.com';
 
 export async function getPhotos(q) {
-  const BASE_URL = 'https://api.unsplash.com';
   const API_KEY = 'LxvKVGJqiSe6NcEVZOaLXC-f2JIIWZaq_o0WrF8mwJc';
-  const END_POINT = '/search/photos';
 
   try {
-    return await axios.get(`${BASE_URL}${END_POINT}`, {
+    const response = await axios.get('/search/photos', {
       params: {
         query: q,
         page: 1,
@@ -15,9 +14,8 @@ export async function getPhotos(q) {
         client_id: API_KEY,
       },
     });
+    return response.data;
   } catch (err) {
     console.error(err.status);
   }
 }
-
-console.log(1);
