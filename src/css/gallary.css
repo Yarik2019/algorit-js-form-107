@@ -19,7 +19,8 @@ section {
   border-radius: 6px;
 }
 
-.search-btn {
+.search-btn,
+.load-more-btn {
   font-size: 14px;
   padding: 10px 20px;
   background-color: #2ecc2e;
@@ -32,7 +33,9 @@ section {
 }
 
 .search-btn:hover,
-.search-btn:focus {
+.search-btn:focus,
+.load-more-btn:hover,
+.load-more-btn:focus {
   background-color: #1b731b;
 }
 
@@ -49,4 +52,49 @@ section {
   margin-left: 30px;
   margin-top: 30px;
   height: 400px;
+}
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 3px dotted #fff;
+  border-style: solid solid dotted dotted;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+}
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px dotted #ff3d00;
+  border-style: solid solid dotted;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  animation: rotationBack 1s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }
