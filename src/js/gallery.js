@@ -40,7 +40,7 @@ async function onSubmit(event) {
 
 async function onClick() {
   page += 1;
-
+  // iii
   showLoader();
   try {
     const response = await getPhotos(searchQuery, page);
